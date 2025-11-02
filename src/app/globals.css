@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Neuepower Ultra";
+  src: url("/fonts/NeuePower-Ultra.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-gradient-primary-right: linear-gradient(
     to right,
@@ -21,4 +29,10 @@
     --color-gradient-primary-right
   );
   --background-image-gradient-primary-left: var(--color-gradient-primary-left);
+
+  --font-neuepower-ultra: "Neuepower Ultra", "Inter", "Arial", sans-serif;
+}
+
+.font-neuepower-ultra {
+  font-family: var(--font-neuepower-ultra);
 }

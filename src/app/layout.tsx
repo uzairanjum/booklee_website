@@ -14,7 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body
+        className="antialiased"
+        style={{ fontFamily: "Inter, Arial, sans-serif" }}
+      >
+        {children}
+      </body>
     </html>
   );
 }

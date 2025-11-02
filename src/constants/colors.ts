@@ -16,6 +16,9 @@ export const colors = {
   lightGray: "#D6D7DA", // border color
   veryLightGray: "#E9EAEB", // very light gray, for subtle backgrounds | border colors
   F5White: "#F5F5F5",
+  veryLightPurple: "#F4ECFF",
+  deepPurple: "#5D38C3",
+  darkSlateGray: "#535862",
   gradientColorRight:
     "linear-gradient(to right, #8426E2, #771FE1, #6A16E1, #5D0DE1, #5004E1)", // Gradient color for some sections
   gradientColorLeft:

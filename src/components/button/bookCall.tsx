@@ -4,6 +4,7 @@ import { colors } from "@/constants/colors";
 interface BookCallButtonProps {
   text: string;
   textColor?: string;
+  textSize?: string;
   bgColor?: string;
   px?: string; // e.g. "px-5"
   py?: string; // e.g. "py-2"
@@ -15,6 +16,7 @@ interface BookCallButtonProps {
 const BookCallButton: React.FC<BookCallButtonProps> = ({
   text,
   textColor = "text-white",
+  textSize = "text-sm",
   bgColor = "bg-black",
   px = "px-5",
   py = "py-2",
@@ -25,7 +27,7 @@ const BookCallButton: React.FC<BookCallButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`${bgColor} ${textColor} ${px} ${py} rounded-lg ${fontWeight} cursor-pointer shadow ease-in-out transition-all duration-200 ${className}`}
+      className={`${bgColor} ${textColor} ${px} ${textSize} ${py} rounded-lg ${fontWeight} cursor-pointer shadow ease-in-out transition-all duration-200 ${className}`}
       onMouseEnter={(e) => {
         e.currentTarget.style.background = colors.gradientColorLeft;
       }}

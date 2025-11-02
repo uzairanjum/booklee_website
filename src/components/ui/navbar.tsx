@@ -25,13 +25,25 @@ const Navbar = () => {
     <div className="flex items-center justify-center mt-5 mx-5 md:mx-10 lg:mx-20">
       {/* Main Navbar Container */}
       <div
-        className="rounded-2xl shadow-xs px-7 py-6 flex items-center justify-between relative w-full max-w-5xl"
+        className="rounded-2xl shadow-xs px-3 py-3 md:px-7 md:py-6 flex items-center justify-between relative w-full max-w-5xl"
         style={{ borderColor: colors.veryLightGray, borderWidth: "1px" }}
       >
         {/* Logo Section */}
-        <Image src={images.logo} alt="logo" width={150} height={150} className="hidden md:block" />
-        <Image src={images.logo} alt="logo" width={120} height={120} className="block md:hidden" />
-        
+        <Image
+          src={images.logo}
+          alt="logo"
+          width={150}
+          height={150}
+          className="hidden md:block"
+        />
+        <Image
+          src={images.logo}
+          alt="logo"
+          width={120}
+          height={120}
+          className="block md:hidden"
+        />
+
         {/* Navigation Links - Desktop */}
         <div className="hidden lg:flex items-center space-x-4">
           {navLinks.map((link, idx) => (
@@ -51,7 +63,10 @@ const Navbar = () => {
               </a>
               {/* Only add divider after an item if it's not the last */}
               {link.dividerClass && idx !== navLinks.length - 1 && (
-                <div className="h-2.5 w-px" style={{ backgroundColor: colors.softSilver }}></div>
+                <div
+                  className="h-2.5 w-px"
+                  style={{ backgroundColor: colors.softSilver }}
+                ></div>
               )}
             </Fragment>
           ))}
@@ -63,18 +78,20 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         />
 
-       
         {/* Call to Action Button */}
         <BookCallButton
           text="Book a demo"
           onClick={() => console.log("Book a call clicked")}
+          textSize="text-sm md:text-lg"
         />
 
         {/* Dropdown Menu - Smoothly animates */}
         <div
           className={cn(
             `absolute left-0 right-0 top-full mx-5 rounded-2xl shadow-xs bg-[${colors.F5White}] overflow-hidden transition-all duration-300 ease-in-out z-50`,
-            isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+            isMobileMenuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-4 pointer-events-none"
           )}
           // style={{ borderColor: colors.veryLightGray, borderWidth: "1px" }}
         >

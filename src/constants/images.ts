@@ -10,7 +10,7 @@ import TeamsLogo from "@public/myTeamLogos.png";
 import paymentMethods from "@public/paymentMethods.png";
 
 export const images = {
-  heroImage,
+  heroSectionImage: heroImage,
   cardImage1: image1,
   cardImage2: image2,
   cardImage3: image3,
