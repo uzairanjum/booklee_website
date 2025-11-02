@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Bookle FE",
-  description: "A Next.js 15 + TypeScript project with Tailwind CSS",
+  title: "BOOKLEE AI - AI-Powered Booking Automation",
+  description: "Never miss a booking again. Your AI receptionist captures every lead, books appointments 24/7, and grows your revenue by 20-30%.",
 };
 
 export default function RootLayout({
