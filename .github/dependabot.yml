@@ -7,19 +7,14 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
     groups:
-      # Group all patch updates together
-      patch-updates:
+      # Group ALL dependency updates together in one PR
+      all-dependencies:
         patterns:
           - "*"
         update-types:
           - "patch"
-      # Group minor updates
-      minor-updates:
-        patterns:
-          - "*"
-        update-types:
           - "minor"
     # Prefix commit messages
     commit-message:
@@ -43,3 +38,11 @@ updates:
     labels:
       - "ci"
       - "dependencies"
+    groups:
+      # Group all GitHub Actions updates together
+      all-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
