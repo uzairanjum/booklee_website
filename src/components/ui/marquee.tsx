@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import Image from "next/image";
-import { colors } from "@/constants/colors";
 
 interface Logo {
   src: string;
@@ -14,6 +13,11 @@ interface MarqueeProps {
   gap?: number;
   pauseOnHover?: boolean;
 }
+
+const colors = {
+  white: "#FFFFFF",
+  darkSlateGray: "#2F4F4F"
+};
 
 // Increased width and height for all company logos
 const companyLogos: Logo[] = [
@@ -51,14 +55,14 @@ const companyLogos: Logo[] = [
 
 const Marquee: React.FC<MarqueeProps> = ({
   logos = companyLogos,
-  speed = 4,
-  gap = 2,
+  speed = 30,
+  gap = 20,
   pauseOnHover = true,
 }) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
-  // Duplicate logos multiple times for seamless infinite scroll
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
+  // Duplicate logos twice for seamless loop
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
     <div
@@ -88,32 +92,34 @@ const Marquee: React.FC<MarqueeProps> = ({
                 key={idx}
                 className="shrink-0 flex items-center justify-center select-none"
                 style={{
-                  width: `201px`,
+                  width: `200px`,
                   height: `100px`,
                 }}
               >
-                {/* If we want grayscale effect : Do not remove the comment */}
-                {/* <Image
+                <img
                   src={logo.src}
                   alt={logo.alt || `Company Logo ${idx + 1}`}
-                  width={logo.width}
-                  height={logo.height}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-                /> */}
-
-                <Image
-                  src={logo.src}
-                  alt={logo.alt || `Company Logo ${idx + 1}`}
-                  width={260}
-                  height={90}
                   className="max-w-full max-h-full object-contain select-none"
+                  style={{ userSelect: "none", pointerEvents: "none" }}
                 />
               </div>
             ))}
           </div>
           {/* Gradient overlays for fade effect */}
-          <div className="absolute top-0 left-0 w-24 h-full bg-linear-to-r from-white to-transparent pointer-events-none z-10" />
-          <div className="absolute top-0 right-0 w-24 h-full bg-linear-to-l from-white to-transparent pointer-events-none z-10" />
+          <div 
+            className="absolute top-0 left-0 h-full pointer-events-none z-10"
+            style={{
+              width: "160px",
+              background: "linear-gradient(to right, white, transparent)"
+            }}
+          />
+          <div 
+            className="absolute top-0 right-0 h-full pointer-events-none z-10"
+            style={{
+              width: "160px",
+              background: "linear-gradient(to left, white, transparent)"
+            }}
+          />
         </div>
       </div>
 
@@ -123,7 +129,7 @@ const Marquee: React.FC<MarqueeProps> = ({
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-25%);
+            transform: translateX(calc(-200px * ${logos.length} - ${gap}px * ${logos.length}));
           }
         }
       `}</style>
