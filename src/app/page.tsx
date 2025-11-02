@@ -1,4 +1,4 @@
-import IconExample from "@/components/IconExample";
+import IconExample from "@/src/components/IconExample";
 
 export default function Home() {
   return (
