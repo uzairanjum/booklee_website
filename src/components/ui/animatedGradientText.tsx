@@ -1,5 +1,5 @@
-'use client';
-import { colors } from '@/constants/colors';
+"use client";
+import { colors } from "@/constants/colors";
 
 interface AnimatedGradientTextProps {
   text: string;
@@ -8,7 +8,7 @@ interface AnimatedGradientTextProps {
 
 const AnimatedGradientText: React.FC<AnimatedGradientTextProps> = ({
   text,
-  className = '',
+  className = "",
 }) => {
   return (
     <>
@@ -29,12 +29,12 @@ const AnimatedGradientText: React.FC<AnimatedGradientTextProps> = ({
       <span
         className={`inline-block bg-clip-text text-transparent ${className}`}
         style={{
-          background: colors.gradientColor,
-          backgroundSize: '400% 400%',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          animation: 'gradient-flow 2.2s ease-in-out infinite',
+          background: colors.gradientColorRight,
+          backgroundSize: "400% 400%",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+          animation: "gradient-flow 2.2s ease-in-out infinite",
         }}
       >
         {text}

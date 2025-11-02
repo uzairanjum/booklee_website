@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gradient-primary-right: linear-gradient(to right, #8426E2, #771FE1, #6A16E1, #5D0DE1, #5004E1);
-  --color-gradient-primary-left: linear-gradient(to left, #8426E2, #771FE1, #6A16E1, #5D0DE1, #5004E1);
-  --background-image-gradient-primary-right: var(--color-gradient-primary-right);
+  --color-gradient-primary-right: linear-gradient(
+    to right,
+    #8426e2,
+    #771fe1,
+    #6a16e1,
+    #5d0de1,
+    #5004e1
+  );
+  --color-gradient-primary-left: linear-gradient(
+    to left,
+    #8426e2,
+    #771fe1,
+    #6a16e1,
+    #5d0de1,
+    #5004e1
+  );
+  --background-image-gradient-primary-right: var(
+    --color-gradient-primary-right
+  );
   --background-image-gradient-primary-left: var(--color-gradient-primary-left);
 }

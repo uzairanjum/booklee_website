@@ -37,13 +37,12 @@ const Navbar = () => {
                 <a
                   href={link.href}
                   className={`text-[${colors.softSilver}] hover:text-[${colors.graphiteGray}] font-semibold text-xs uppercase tracking-wide transition-colors duration-200`}
-
                 >
                   {link.label}
                 </a>
                 {/* Only add divider after an item if it's not the last */}
                 {link.dividerClass && idx !== navLinks.length - 1 && (
-                <div className={`h-2.5 w-px bg-[${colors.softSilver}]`}></div> 
+                  <div className={`h-2.5 w-px bg-[${colors.softSilver}]`}></div>
                 )}
               </Fragment>
             ))}

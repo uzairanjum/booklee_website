@@ -1,13 +1,13 @@
-import heroImage from '@public/heroImage.png';
-import image1 from '@public/image1.png';
-import image2 from '@public/image2.png';
-import image3 from '@public/image3.png';
-import image4 from '@public/image4.png';
-import bgDotted from '@public/bgDotted.png';
-import integrations from '@public/integrations.webp';
-import logo from '@public/logo.png';
-import TeamsLogo from '@public/myTeamLogos.png';
-import paymentMethods from '@public/paymentMethods.png';
+import heroImage from "@public/heroImage.png";
+import image1 from "@public/image1.png";
+import image2 from "@public/image2.png";
+import image3 from "@public/image3.png";
+import image4 from "@public/image4.png";
+import bgDotted from "@public/bgDotted.png";
+import integrations from "@public/integrations.webp";
+import logo from "@public/logo.png";
+import TeamsLogo from "@public/myTeamLogos.png";
+import paymentMethods from "@public/paymentMethods.png";
 
 export const images = {
   heroImage,
