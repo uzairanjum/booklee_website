@@ -99,6 +99,8 @@ const Marquee: React.FC<MarqueeProps> = ({
                 <Image
                   src={logo.src}
                   alt={logo.alt || `Company Logo ${idx + 1}`}
+                  width={200}
+                  height={100}
                   className="max-w-full max-h-full object-contain select-none"
                   style={{ userSelect: "none", pointerEvents: "none" }}
                 />
