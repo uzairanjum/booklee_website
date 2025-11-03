@@ -8,6 +8,8 @@ interface SectionHeaderProps {
   description?: string;
   headingClass?: string;
   marginBottom?: number;
+  maxWidth?: string;
+  mainHeadingColor?: string;
 }
 
 const SectionHeader = ({
@@ -16,6 +18,8 @@ const SectionHeader = ({
   description,
   headingClass,
   marginBottom,
+  maxWidth = "max-w-4xl",
+  mainHeadingColor,
 }: SectionHeaderProps) => {
   const getMarginClass = (margin?: number) => {
     if (!margin) return "mb-16";
@@ -55,10 +59,7 @@ const SectionHeader = ({
     >
       {smallHeading && (
         <h2
-          className={`text-[11px] md:text-[11px] font-medium mb-4 uppercase tracking-wide text-[${colors.ashGray}]`}
-          style={{
-            letterSpacing: "0.1em",
-          }}
+          className={`text-[11px] md:text-[11px] font-semibold mb-4 uppercase tracking-wide text-[${colors.ashGray}]`}
         >
           {smallHeading}
         </h2>
@@ -66,7 +67,7 @@ const SectionHeader = ({
       {mainHeading && (
         <h1
           className={cn(
-            `text-3xl md:text-4xl lg:text-5xl font-bold mb-4 max-w-4xl mx-auto font-neuepower-ultra text-[${colors.ashGray}]`,
+            `text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 ${maxWidth} mx-auto font-neuepower-ultra text-[${mainHeadingColor ? mainHeadingColor : colors.charcoalBlue}]`,
             headingClass
           )}
         >

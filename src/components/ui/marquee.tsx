@@ -66,7 +66,7 @@ const Marquee: React.FC<MarqueeProps> = ({
 
   return (
     <div
-      className=" pt-10 pb-6 overflow-x-hidden"
+      className="pt-10 pb-6 overflow-hidden"
       style={{ backgroundColor: colors.white }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,8 +76,10 @@ const Marquee: React.FC<MarqueeProps> = ({
         >
           Trusted by top brands
         </h2>
+      </div>
 
-        <div className="relative overflow-hidden w-full" data-marquee-container>
+      <div className="w-full overflow-hidden">
+        <div className="relative overflow-hidden" data-marquee-container>
           <div
             ref={marqueeRef}
             className={`flex ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}`}
@@ -90,13 +92,13 @@ const Marquee: React.FC<MarqueeProps> = ({
             {duplicatedLogos.map((logo, idx) => (
               <div
                 key={idx}
-                className="shrink-0 flex items-center justify-center select-none w-32 h-16 md:w-48 md:h-24 lg:w-[200px] lg:h-[100px]"
+                className="shrink-0 flex items-center justify-center select-none w-28 h-14 sm:w-36 sm:h-18 md:w-44 md:h-22 lg:w-[180px] lg:h-[90px]"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt || `Company Logo ${idx + 1}`}
-                  width={200}
-                  height={100}
+                  width={180}
+                  height={90}
                   className="max-w-full max-h-full object-contain select-none"
                   style={{ userSelect: "none", pointerEvents: "none" }}
                 />
@@ -121,16 +123,21 @@ const Marquee: React.FC<MarqueeProps> = ({
 
       <style jsx>{`
         :global([data-marquee-container]) {
-          --logo-width: 128px;
+          --logo-width: 112px;
+        }
+        @media (min-width: 640px) {
+          :global([data-marquee-container]) {
+            --logo-width: 144px;
+          }
         }
         @media (min-width: 768px) {
           :global([data-marquee-container]) {
-            --logo-width: 192px;
+            --logo-width: 176px;
           }
         }
         @media (min-width: 1024px) {
           :global([data-marquee-container]) {
-            --logo-width: 200px;
+            --logo-width: 180px;
           }
         }
         @keyframes scroll {
