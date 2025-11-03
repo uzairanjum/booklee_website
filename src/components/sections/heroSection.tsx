@@ -18,7 +18,10 @@ const heroSectionData = {
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-15 px-5">
+    <div
+      id="hero-section"
+      className="relative z-10 flex flex-col items-center justify-center mt-15 px-5"
+    >
       {/* Main Container */}
       <div className="flex flex-col items-center gap-10 max-w-4xl w-full">
         {/* Upper Section */}

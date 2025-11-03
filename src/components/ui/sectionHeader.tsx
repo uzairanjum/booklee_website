@@ -1,3 +1,4 @@
+"use client";
 import { colors } from "@/constants/colors";
 import { cn } from "@/lib/utils";
 
@@ -48,22 +49,40 @@ const SectionHeader = ({
     <div
       className={cn(
         getMarginClass(marginBottom),
-        "flex flex-col items-center justify-center text-center"
+        "flex flex-col items-center justify-center text-center px-4 sm:px-6"
       )}
+      data-section-header="true"
     >
-      <h2 className={`text-md font-medium text-[${colors.slateGray}] mb-4`}>
-        {smallHeading}
-      </h2>
-      <h1
-        className={`text-3xl md:text-4xl font-bold text-[${colors.black}] mb-4 ${headingClass}`}
-      >
-        {mainHeading}
-      </h1>
-      <p
-        className={`text-sm text-[${colors.slateGray}] leading-relaxed max-w-3xl mx-auto `}
-      >
-        {description}
-      </p>
+      {smallHeading && (
+        <h2
+          className="text-sm md:text-base font-medium mb-4 uppercase tracking-wide"
+          style={{
+            color: colors.D6Gray,
+            letterSpacing: "0.1em",
+          }}
+        >
+          {smallHeading}
+        </h2>
+      )}
+      {mainHeading && (
+        <h1
+          className={cn(
+            "text-3xl md:text-4xl lg:text-5xl font-bold mb-4 max-w-4xl mx-auto",
+            headingClass
+          )}
+          style={{ color: colors.darkGray }}
+        >
+          {mainHeading}
+        </h1>
+      )}
+      {description && (
+        <p
+          className="text-sm md:text-base max-w-4xl mx-auto leading-[24px]"
+          style={{ color: colors.slateGray }}
+        >
+          {description}
+        </p>
+      )}
     </div>
   );
 };

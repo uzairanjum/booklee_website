@@ -14,6 +14,8 @@ export const colors = {
   midnightNavy: "#07111D", // problem section
   softSilver: "#ADADAD", // Navbar text-color
   lightGray: "#D6D7DA", // border color
+  D6Gray: "#D6D6D6", // border color
+  B7Gray: "#B7B7B7",
   veryLightGray: "#E9EAEB", // very light gray, for subtle backgrounds | border colors
   F5White: "#F5F5F5",
   veryLightPurple: "#F4ECFF",

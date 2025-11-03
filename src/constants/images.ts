@@ -8,6 +8,7 @@ import integrations from "@public/integrations.webp";
 import logo from "@public/logo.png";
 import TeamsLogo from "@public/myTeamLogos.png";
 import paymentMethods from "@public/paymentMethods.png";
+import dottedBackground from "@public/dotBg.png";
 
 export const images = {
   heroSectionImage: heroImage,
@@ -20,4 +21,5 @@ export const images = {
   logo,
   TeamsLogo,
   paymentMethods,
+  dottedBackground,
 };

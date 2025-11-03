@@ -66,10 +66,10 @@ const Marquee: React.FC<MarqueeProps> = ({
 
   return (
     <div
-      className="w-full pt-10 pb-6 overflow-hidden"
+      className=" pt-10 pb-6 overflow-x-hidden"
       style={{ backgroundColor: colors.white }}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           className="text-md font-bold text-center mb-10"
           style={{ color: colors.darkSlateGray }}
@@ -77,7 +77,7 @@ const Marquee: React.FC<MarqueeProps> = ({
           Trusted by top brands
         </h2>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden w-full" data-marquee-container>
           <div
             ref={marqueeRef}
             className={`flex ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}`}
@@ -90,11 +90,7 @@ const Marquee: React.FC<MarqueeProps> = ({
             {duplicatedLogos.map((logo, idx) => (
               <div
                 key={idx}
-                className="shrink-0 flex items-center justify-center select-none"
-                style={{
-                  width: `200px`,
-                  height: `100px`,
-                }}
+                className="shrink-0 flex items-center justify-center select-none w-32 h-16 md:w-48 md:h-24 lg:w-[200px] lg:h-[100px]"
               >
                 <Image
                   src={logo.src}
@@ -109,16 +105,14 @@ const Marquee: React.FC<MarqueeProps> = ({
           </div>
           {/* Gradient overlays for fade effect */}
           <div
-            className="absolute top-0 left-0 h-full pointer-events-none z-10"
+            className="absolute top-0 left-0 h-full pointer-events-none z-10 w-40"
             style={{
-              width: "160px",
               background: "linear-gradient(to right, white, transparent)",
             }}
           />
           <div
-            className="absolute top-0 right-0 h-full pointer-events-none z-10"
+            className="absolute top-0 right-0 h-full pointer-events-none z-10 w-40"
             style={{
-              width: "160px",
               background: "linear-gradient(to left, white, transparent)",
             }}
           />
@@ -126,13 +120,29 @@ const Marquee: React.FC<MarqueeProps> = ({
       </div>
 
       <style jsx>{`
+        :global([data-marquee-container]) {
+          --logo-width: 128px;
+        }
+        @media (min-width: 768px) {
+          :global([data-marquee-container]) {
+            --logo-width: 192px;
+          }
+        }
+        @media (min-width: 1024px) {
+          :global([data-marquee-container]) {
+            --logo-width: 200px;
+          }
+        }
         @keyframes scroll {
           0% {
             transform: translateX(0);
           }
           100% {
             transform: translateX(
-              calc(-200px * ${logos.length} - ${gap}px * ${logos.length})
+              calc(
+                var(--logo-width) * ${logos.length} * -1 - ${gap}px *
+                  ${logos.length}
+              )
             );
           }
         }
