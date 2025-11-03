@@ -10,6 +10,7 @@ interface SectionHeaderProps {
   marginBottom?: number;
   maxWidth?: string;
   mainHeadingColor?: string;
+  descriptionColor?: string;
 }
 
 const SectionHeader = ({
@@ -20,6 +21,7 @@ const SectionHeader = ({
   marginBottom,
   maxWidth = "max-w-4xl",
   mainHeadingColor,
+  descriptionColor,
 }: SectionHeaderProps) => {
   const getMarginClass = (margin?: number) => {
     if (!margin) return "mb-16";
@@ -75,7 +77,12 @@ const SectionHeader = ({
         </h1>
       )}
       {description && (
-        <p className="text-sm md:text-base font-medium max-w-4xl mx-auto leading-[24px] text-[#555E67]">
+        <p
+          className="text-sm md:text-base font-medium max-w-4xl mx-auto leading-[24px]"
+          style={{
+            color: descriptionColor ? descriptionColor : colors.darkSlateGray,
+          }}
+        >
           {description}
         </p>
       )}

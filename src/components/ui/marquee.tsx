@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 interface Logo {
@@ -19,7 +19,7 @@ const colors = {
   darkSlateGray: "#2F4F4F",
 };
 
-// Increased width and height for all company logos
+// Company logos
 const companyLogos: Logo[] = [
   {
     src: "https://cdn.prod.website-files.com/6811ccd7b98203355f3d9732/68dccbe7cfa5a9eb3b13b22e_Adroit.png",
@@ -61,96 +61,91 @@ const Marquee: React.FC<MarqueeProps> = ({
 }) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
-  // Duplicate logos twice for seamless loop
-  const duplicatedLogos = [...logos, ...logos];
+  // Triple the logos for truly seamless infinite scroll
+  const triplicatedLogos = [...logos];
 
   return (
     <div
-      className="pt-10 pb-6 overflow-hidden"
+      className="pt-10 pb-6 overflow-hidden w-full"
       style={{ backgroundColor: colors.white }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <h2
-          className="text-md font-bold text-center mb-10"
+          className="text-md font-bold text-center"
           style={{ color: colors.darkSlateGray }}
         >
           Trusted by top brands
         </h2>
       </div>
 
-      <div className="w-full overflow-hidden">
-        <div className="relative overflow-hidden" data-marquee-container>
-          <div
-            ref={marqueeRef}
-            className={`flex ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}`}
-            style={{
-              animation: `scroll ${speed}s linear infinite`,
-              gap: `${gap}px`,
-              willChange: "transform",
-            }}
-          >
-            {duplicatedLogos.map((logo, idx) => (
-              <div
-                key={idx}
-                className="shrink-0 flex items-center justify-center select-none w-28 h-14 sm:w-36 sm:h-18 md:w-44 md:h-22 lg:w-[180px] lg:h-[90px]"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt || `Company Logo ${idx + 1}`}
-                  width={180}
-                  height={90}
-                  className="max-w-full max-h-full object-contain select-none"
-                  style={{ userSelect: "none", pointerEvents: "none" }}
-                />
-              </div>
-            ))}
-          </div>
-          {/* Gradient overlays for fade effect */}
-          <div
-            className="absolute top-0 left-0 h-full pointer-events-none z-10 w-40"
-            style={{
-              background: "linear-gradient(to right, white, transparent)",
-            }}
-          />
-          <div
-            className="absolute top-0 right-0 h-full pointer-events-none z-10 w-40"
-            style={{
-              background: "linear-gradient(to left, white, transparent)",
-            }}
-          />
+      {/* Marquee Container */}
+      <div className="logos-container relative w-full overflow-hidden">
+        <div
+          ref={marqueeRef}
+          className={`logos-row flex ${pauseOnHover ? "hover:pause-animation" : ""}`}
+          style={{
+            animation: `marquee ${speed}s linear infinite`,
+            gap: `${gap}px`,
+          }}
+        >
+          {triplicatedLogos.map((logo, idx) => (
+            <div
+              key={idx}
+              className="logo shrink-0 flex items-center justify-center w-32 h-16 sm:w-36 sm:h-18 md:w-44 md:h-22 lg:w-52 lg:h-26"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt || `Company Logo ${(idx % logos.length) + 1}`}
+                width={200}
+                height={100}
+                className="max-w-full max-h-full object-contain"
+                loading="eager"
+              />
+            </div>
+          ))}
         </div>
+
+        {/* Gradient Overlays */}
+        <div className="logos-gradient absolute top-0 left-0 h-full w-32 md:w-40 pointer-events-none z-10" />
+        <div className="logos-gradient is-inverted absolute top-0 right-0 h-full w-32 md:w-40 pointer-events-none z-10" />
       </div>
 
       <style jsx>{`
-        :global([data-marquee-container]) {
-          --logo-width: 112px;
+        .logos-container {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
         }
-        @media (min-width: 640px) {
-          :global([data-marquee-container]) {
-            --logo-width: 144px;
-          }
+
+        .logos-row {
+          display: flex;
+          width: max-content;
         }
-        @media (min-width: 768px) {
-          :global([data-marquee-container]) {
-            --logo-width: 176px;
-          }
+
+        .logos-gradient {
+          background: linear-gradient(to right, ${colors.white}, transparent);
         }
-        @media (min-width: 1024px) {
-          :global([data-marquee-container]) {
-            --logo-width: 180px;
-          }
+
+        .logos-gradient.is-inverted {
+          background: linear-gradient(to left, ${colors.white}, transparent);
         }
-        @keyframes scroll {
+
+        @keyframes marquee {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(
-              calc(
-                var(--logo-width) * ${logos.length} * -1 - ${gap}px *
-                  ${logos.length}
-              )
-            );
+            transform: translateX(-33.33%);
+          }
+        }
+
+        .pause-animation {
+          animation-play-state: paused;
+        }
+
+        @media (hover: hover) {
+          .logos-row:hover {
+            animation-play-state: paused;
           }
         }
       `}</style>
