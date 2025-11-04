@@ -60,7 +60,7 @@ const MoreFeaturesSection = () => {
               </p>
             </div>
             {/* Right side - Image */}
-            <div className="flex-1 flex justify-center lg:justify-end items-start w-full">
+            <div className="flex-1 flex justify-end items-end w-full">
               <div className="relative w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-[600px]">
                 <Image
                   src={upperFeature.image}
@@ -96,15 +96,17 @@ const MoreFeaturesSection = () => {
                     {feature.description}
                   </p>
                 </div>
-                <div className="relative right-0 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
-                  <Image
-                    src={feature.image}
-                    alt={feature.heading}
-                    width={600}
-                    height={400}
-                    className="object-contain rounded-lg w-full h-auto min-h-[120px]"
-                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 65vw, 50vw"
-                  />
+                <div className="flex justify-end items-end w-full">
+                  <div className="relative w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
+                    <Image
+                      src={feature.image}
+                      alt={feature.heading}
+                      width={600}
+                      height={400}
+                      className="object-contain rounded-lg w-full h-auto min-h-[120px]"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 65vw, 50vw"
+                    />
+                  </div>
                 </div>
               </div>
             ))}

@@ -293,7 +293,10 @@ const FeatureSection = () => {
                           className="rounded-3xl"
                           onLoadedData={() => {
                             // Play video if it's the active one when it loads
-                            if (idx === currentIndex && videoRefs.current[idx]) {
+                            if (
+                              idx === currentIndex &&
+                              videoRefs.current[idx]
+                            ) {
                               videoRefs.current[idx]?.play().catch((err) => {
                                 console.error("Error playing video:", err);
                               });
