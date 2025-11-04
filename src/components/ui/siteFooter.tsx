@@ -6,7 +6,7 @@ import Link from "next/link";
 const SiteFooter = () => {
   return (
     <footer
-      className={`w-full flex flex-col items-center justify-center gap-2 bg-[${colors.midnightBlack}] `}
+      className={`w-full flex flex-col items-center justify-center gap-2 bg-[${colors.midnightBlack}] font-jetbrains-mono`}
     >
       <div
         className={`w-full text-[10px] uppercase font-medium text-[${colors.silverGray}] border-t border-b py-4`}

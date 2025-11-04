@@ -61,7 +61,7 @@ const SectionHeader = ({
     >
       {smallHeading && (
         <h2
-          className={`text-[11px] md:text-[11px] font-semibold mb-4 uppercase tracking-wide text-[${colors.ashGray}]`}
+          className={`text-[11px] md:text-[11px] font-semibold mb-4 uppercase tracking-wide text-[${colors.ashGray}] font-jetbrains-mono`}
         >
           {smallHeading}
         </h2>
