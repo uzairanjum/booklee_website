@@ -8,18 +8,34 @@ import BookCallButton from "@/components/button/bookCall";
 import HamburgerButton from "@/components/button/hamburger";
 
 const navLinks = [
-  { href: "/", label: "Solutions", dividerClass: true },
+  { href: "solutions", label: "Solutions", dividerClass: true },
   {
-    href: "#features",
+    href: "features",
     label: "Features",
     dividerClass: true,
   },
-  { href: "#pricing", label: "Pricing", dividerClass: true },
-  { href: "#contact", label: "Contacts" },
+  { href: "pricing", label: "Pricing", dividerClass: true },
+  { href: "contact", label: "Contact" },
 ];
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(href);
+    
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop - 80; // Account for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+    
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <div className="flex items-center justify-center mt-5 mx-5 md:mx-10 lg:mx-20">
@@ -50,7 +66,8 @@ const Navbar = () => {
             <Fragment key={link.href}>
               <a
                 href={link.href}
-                className="font-semibold text-xs uppercase tracking-wide transition-colors duration-200"
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="font-semibold text-xs uppercase tracking-wide transition-colors duration-200 cursor-pointer"
                 style={{ color: colors.softSilver }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = colors.graphiteGray;
@@ -100,8 +117,8 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-center font-semibold text-xs uppercase tracking-wide transition-colors duration-200 pb-3 last:pb-2"
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="block text-center font-semibold text-xs uppercase tracking-wide transition-colors duration-200 pb-3 last:pb-2 cursor-pointer"
                 style={{
                   color: colors.softSilver,
                 }}

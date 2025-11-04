@@ -29,8 +29,8 @@ const lowerFeatures = [
 
 const MoreFeaturesSection = () => {
   return (
-    <div className="bg-white py-10 sm:py-14 md:py-18 px-2 md:px-8 w-full">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-white py-10 sm:py-14 md:py-18 px-2 md:px-8 w-full scroll-mt-20">
+      <div className="max-w-7xl mx-auto" id="features" >
         <SectionHeader
           smallHeading="MORE FEATURES"
           mainHeading="Features that help you to run smoothly"

@@ -72,7 +72,7 @@ const PricingSection = () => {
         marginBottom={16}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-stretch">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-stretch" id="pricing">
         {plans.map((p) => (
           <div className="h-full" key={p.title}>
             <PricingCard

@@ -40,7 +40,7 @@ const faqs: Faq[] = [
 ];
 
 const FaqSection = () => {
-  const [openIndex, setOpenIndex] = useState<number>(0);
+  const [openIndex, setOpenIndex] = useState<number>();
   const contentRefs = useRef<HTMLDivElement[]>([]);
   const [measuredHeights, setMeasuredHeights] = useState<number[]>([]);
 

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "Neuepower Ultra";
   src: url("/fonts/NeuePower-Ultra.ttf") format("truetype");
