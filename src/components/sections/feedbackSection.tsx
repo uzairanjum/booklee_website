@@ -122,7 +122,7 @@ const FeedbackSection = () => {
       {/* Sticky container on desktop, regular on mobile */}
       <div className="md:sticky md:top-0 flex items-center justify-center md:min-h-screen px-4 sm:px-6 md:px-8 lg:px-10 flex-col py-14 w-full md:py-0">
         <div className="max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-216 mx-auto w-full px-2 sm:px-4">
-          <h2 className="text-2xl md:text-5xl lg:text-5xl font-bold text-center font-neuepower-ultra leading-tight md:leading-snug wrap-break-word">
+          <h2 className="text-2xl md:text-5xl lg:text-5xl font-poppins-bold text-center leading-tight md:leading-snug wrap-break-word">
             {text.split("").map((char, index) => (
               <span
                 key={index}
@@ -142,7 +142,7 @@ const FeedbackSection = () => {
             className="text-lg md:text-xl lg:text-xl font-semibold mb-2"
             style={{ color: colors.slateGray }}
           >
-            Muhammad Husnain 
+            Muhammad Husnain
           </p>
           <p
             className="text-md font-medium"

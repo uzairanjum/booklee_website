@@ -39,7 +39,6 @@ const faqs: Faq[] = [
   },
 ];
 
-
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number>();
   const contentRefs = useRef<HTMLDivElement[]>([]);

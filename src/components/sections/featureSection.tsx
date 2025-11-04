@@ -169,7 +169,7 @@ const FeatureSection = () => {
               >
                 {/* Heading Section */}
                 <div className="flex flex-col items-center justify-center w-full py-6 gap-4 mb-4">
-                  <div className="text-5xl md:text-5xl font-bold font-neuepower-ultra text-center text-white">
+                  <div className="text-5xl md:text-5xl font-poppins-bold text-center text-white">
                     {feature.title}
                   </div>
                   <div className="text-white text-base md:text-lg font-semibold text-center px-4">
@@ -269,7 +269,7 @@ const FeatureSection = () => {
                       }}
                     >
                       <div className="flex flex-col items-center justify-center max-w-lg w-full py-6 gap-4">
-                        <div className="text-7xl font-bold font-neuepower-ultra text-center text-white">
+                        <div className="text-7xl font-poppins-bold text-center text-white">
                           {feature.title}
                         </div>
                         <div className="text-white text-lg font-semibold text-center">

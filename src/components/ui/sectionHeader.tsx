@@ -69,7 +69,7 @@ const SectionHeader = ({
       {mainHeading && (
         <h1
           className={cn(
-            `text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 ${maxWidth} mx-auto font-neuepower-ultra`,
+            `text-3xl md:text-4xl lg:text-5xl mb-4 ${maxWidth} mx-auto font-poppins-extrabold`,
             headingClass
           )}
           style={{

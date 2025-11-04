@@ -21,10 +21,13 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
     const targetElement = document.getElementById(href);
-    
+
     if (targetElement) {
       const offsetTop = targetElement.offsetTop - 80; // Account for navbar height
       window.scrollTo({
@@ -32,7 +35,7 @@ const Navbar = () => {
         behavior: "smooth",
       });
     }
-    
+
     // Close mobile menu if open
     setIsMobileMenuOpen(false);
   };

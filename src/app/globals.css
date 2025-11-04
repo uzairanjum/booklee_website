@@ -20,6 +20,38 @@ html {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Poppins Regular";
+  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Medium";
+  src: url("/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins ExtraBold";
+  src: url("/fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-gradient-primary-right: linear-gradient(
     to right,
@@ -44,6 +76,26 @@ html {
 
   --font-neuepower-ultra: "Neuepower Ultra", "Inter", "Arial", sans-serif;
   --font-jetbrains-mono: "JetBrains Mono", "Courier New", monospace;
+  --font-poppins-regular: "Poppins Regular", "Inter", "Arial", sans-serif;
+  --font-poppins-medium: "Poppins Medium", "Inter", "Arial", sans-serif;
+  --font-poppins-bold: "Poppins Bold", "Inter", "Arial", sans-serif;
+  --font-poppins-extrabold: "Poppins ExtraBold", "Inter", "Arial", sans-serif;
+}
+
+.font-poppins-regular {
+  font-family: var(--font-poppins-regular);
+}
+
+.font-poppins-medium {
+  font-family: var(--font-poppins-medium);
+}
+
+.font-poppins-bold {
+  font-family: var(--font-poppins-bold);
+}
+
+.font-poppins-extrabold {
+  font-family: var(--font-poppins-extrabold);
 }
 
 .font-neuepower-ultra {

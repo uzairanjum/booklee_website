@@ -9,7 +9,8 @@ import Marquee from "../ui/marquee";
 const heroSectionData = {
   badgeText: "New Feature Dropped!!",
   badgeDescription: "Booklee can now understand all your product images too!",
-  titleHighlight: "Booklee is an AI-powered business automation platform built for ",
+  titleHighlight:
+    "Booklee is an AI-powered business automation platform built for ",
   titleHighlight2: "service-based business.",
   description:
     "Your 24/7 sales and customer support engine—handling inquiries, scheduling, reminders, and follow-ups across Omni Channel, SMS, Email, and Call.",
@@ -27,14 +28,13 @@ const HeroSection = () => {
         {/* Upper Section */}
         <div className="flex flex-col p-4 items-center gap-4">
           {/* Feature Announcement Bar */}
-    
 
           {/* Main Heading */}
-          <h1 className="text-2xl  sm:text-3xl md:text-3xl lg:text-4xl font-bold text-center max-w-4xl mx-auto font-neuepower-ultra leading-[32px] md:leading-[59px]">
-            <span style={{ color: colors.charcoalBlue}}>
+          <h1 className="text-2xl  sm:text-3xl md:text-3xl lg:text-4xl capitalize font-bold text-center max-w-2xl mx-auto font-poppins-bold leading-[32px] md:leading-[59px]">
+            <span style={{ color: colors.charcoalBlue }}>
               {heroSectionData.titleHighlight}
             </span>
-            <span  style={{ color: colors.slateGray }}>
+            <span style={{ color: colors.slateGray }}>
               {heroSectionData.titleHighlight2}
             </span>
           </h1>
