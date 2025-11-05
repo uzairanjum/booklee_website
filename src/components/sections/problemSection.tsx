@@ -24,7 +24,7 @@ const ProblemSection = () => {
       <div>
         <SectionHeader
           smallHeading="PROBLEM"
-          mainHeading="Tired of Replying to Customer Messages"
+          mainHeading="Every missed message is a missed sale."
           description="Running your business on social media is overwhelming. Customers keep messaging and you can't reply to all of them instantly resulting in lost sales which leads to overworking and constant stress. We don't want that for you."
           maxWidth="max-w-2xl"
           mainHeadingColor={colors.ashGray}

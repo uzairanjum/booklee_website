@@ -8,12 +8,11 @@ import Marquee from "../ui/marquee";
 
 const heroSectionData = {
   badgeText: "New Feature Dropped!!",
-  badgeDescription: "Booklee can now understand all your product images too!",
-  titleHighlight:
-    "Booklee is an AI-powered business automation platform built for ",
-  titleHighlight2: "service-based business.",
+  badgeDescription: "Booklee can now understand all your business too!",
+  titleHighlight:"Booklee AI automates how service businesses  ",
+  titleHighlight2: "Communicate, Convert, and Grow.",
   description:
-    "Your 24/7 sales and customer support engine—handling inquiries, scheduling, reminders, and follow-ups across Omni Channel, SMS, Email, and Call.",
+    "From lead capture to confirmed booking, it manages conversations across every channel—day or night.",
   buttonText: "Book a demo",
 };
 
@@ -30,7 +29,7 @@ const HeroSection = () => {
           {/* Feature Announcement Bar */}
 
           {/* Main Heading */}
-          <h1 className="text-2xl  sm:text-3xl md:text-3xl lg:text-4xl capitalize font-bold text-center max-w-2xl mx-auto font-poppins-bold leading-[32px] md:leading-[59px]">
+          <h1 className="text-2xl  sm:text-3xl md:text-3xl lg:text-4xl  font-bold text-center max-w-2xl mx-auto font-poppins-bold leading-[32px] md:leading-[59px]">
             <span style={{ color: colors.charcoalBlue }}>
               {heroSectionData.titleHighlight}
             </span>

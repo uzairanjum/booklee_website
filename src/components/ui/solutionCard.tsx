@@ -7,7 +7,7 @@ const SolutionCard = () => {
       <SectionHeader
         smallHeading="SOLUTION BOOKLEE OFFERS"
         mainHeading="Booklee replies to all of your customers so that you can focus on growth"
-        description="Booklee is like your superhuman customer support agent that replies to all your customers, takes orders and handles issues automatically."
+        description="Booklee handles all your incoming calls, messages, and booking requests across every channel — replying instantly, scheduling appointments, and keeping every customer engaged while you focus on your business."
         maxWidth="max-w-5xl"
         marginBottom={12}
       />

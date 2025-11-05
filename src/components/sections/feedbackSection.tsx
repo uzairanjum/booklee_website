@@ -7,7 +7,7 @@ const FeedbackSection = () => {
   const [highlightedChars, setHighlightedChars] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  const text = `“Since using Booklee, we haven't  missed an appointment — inquiries are answered instantly, our bookings are up 30%”`;
+  const text = `“We used to lose leads to slow replies. Now Booklee handles them in seconds, and our bookings have never been higher.”`;
 
   // Check if mobile on mount and resize
   useEffect(() => {
