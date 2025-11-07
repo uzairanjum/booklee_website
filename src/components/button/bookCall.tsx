@@ -27,7 +27,7 @@ const BookCallButton: React.FC<BookCallButtonProps> = ({
   return (
     <button
       onClick={() =>
-        window.open("https://cal.com/uzair-anjum-cfkozo/30min", "_blank")
+        window.open("https://cal.com/uzair-anjum-cfkozo/booklee-demo", "_blank")
       }
       className={`${bgColor} ${textColor} ${px} ${textSize} ${py} rounded-lg ${fontWeight} cursor-pointer shadow ease-in-out transition-all duration-200 ${className}`}
       onMouseEnter={(e) => {
